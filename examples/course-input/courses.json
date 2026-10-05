@@ -1,0 +1,30 @@
+{
+  "courses": [
+    {
+      "id": "demo-intro",
+      "title": "听读入门",
+      "group": "入门",
+      "text": "入门/01-听读入门.md",
+      "audio": "入门/01-听读入门.wav",
+      "author": "框架自制示例"
+    },
+    {
+      "id": "demo-text",
+      "title": "仅文稿课程",
+      "group": "入门",
+      "text": "入门/02-仅文稿.md"
+    },
+    {
+      "id": "demo-audio",
+      "title": "仅音频课程",
+      "group": "入门",
+      "audio": "入门/03-仅音频.wav"
+    },
+    {
+      "id": "demo-advanced",
+      "title": "持续学习",
+      "group": "进阶",
+      "text": "进阶/01-持续学习.txt"
+    }
+  ]
+}

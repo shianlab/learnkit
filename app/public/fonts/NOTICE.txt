@@ -1,0 +1,1 @@
+Jyrk Study Sans derives from Noto Sans SC under SIL OFL 1.1. Static weight instances 400/700; shared CJK radical and compatibility aliases removed to preserve unified Chinese text in PDF ToUnicode. Renamed family. Original glyph outlines unchanged. Source: https://github.com/google/fonts/tree/main/ofl/notosanssc
