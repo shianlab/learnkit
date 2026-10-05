@@ -21,10 +21,10 @@ for(const dir of ['desktop','dist']){
 }
 fs.copyFileSync(path.join(app,'app.config.json'),path.join(staging,'app.config.json'));
 fs.writeFileSync(path.join(staging,'package.json'),JSON.stringify({name:manifest.name,version:manifest.version,description:manifest.description,author:manifest.author,main:manifest.main},null,2));
-const paths=await packager({dir:staging,name:'RikeDesk',appVersion:manifest.version,appCopyright:'shianlab',platform:'win32',arch:'x64',electronVersion:manifest.devDependencies.electron,
+const paths=await packager({dir:staging,name:'LearnKit',appVersion:manifest.version,appCopyright:'shianlab',platform:'win32',arch:'x64',electronVersion:manifest.devDependencies.electron,
   ...(fs.existsSync(path.join(project,'tools/electron',`electron-v${manifest.devDependencies.electron}-win32-x64.zip`))?{electronZipDir:path.join(project,'tools/electron')}:{}),out:outRoot,asar:true,prune:false,overwrite:true,
-  icon:path.join(app,'assets/brand.ico'),win32metadata:{ProductName:config.name,FileDescription:manifest.description,CompanyName:manifest.author,OriginalFilename:'RikeDesk.exe'}});
+  icon:path.join(app,'assets/brand.ico'),win32metadata:{ProductName:config.name,FileDescription:manifest.description,CompanyName:manifest.author,OriginalFilename:'LearnKit.exe'}});
 const output=paths[0];
 fs.cpSync(library,path.join(output,'resources/library'),{recursive:true});
 fs.copyFileSync(search,path.join(output,'resources/search-v1.sqlite'));
-console.log('Ready to run:',path.join(output,'RikeDesk.exe'));
+console.log('Ready to run:',path.join(output,'LearnKit.exe'));

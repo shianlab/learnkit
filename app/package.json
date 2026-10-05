@@ -1,6 +1,6 @@
 {
-  "name": "rikedesk-framework",
-  "productName": "日课书桌",
+  "name": "learnkit-framework",
+  "productName": "学匣",
   "version": "0.1.0",
   "private": true,
   "description": "可复用的离线音频与文稿学习应用框架",
