@@ -1,17 +1,18 @@
 <div align="center">
 
+<img src="../assets/readme-banner.jpg" alt="LearnKit · 学匣 — Audio, Reading, Notes, Review" width="100%" />
+
 # LearnKit · 学匣
 
 ### Build your own desktop learning app from audio and documents
 
-[![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../../LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0--dev-orange.svg)](../../app/package.json)
-[![Windows](https://img.shields.io/badge/platform-Windows_x64-0078D4.svg)](../../README.md)
-[![Electron](https://img.shields.io/badge/Electron-44.5.1-47848F.svg?logo=electron)](../../app/package.json)
-[![React](https://img.shields.io/badge/React-19.3.0-149ECA.svg?logo=react)](../../app/package.json)
-[![TypeScript](https://img.shields.io/badge/TypeScript-7.0.2-3178C6.svg?logo=typescript)](../../app/package.json)
+[![MIT](https://img.shields.io/badge/License-MIT-68735f?style=flat-square)](../../LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.0--dev-c85c2d?style=flat-square)](../../app/package.json)
+[![Windows](https://img.shields.io/badge/platform-Windows_x64-292f2d?style=flat-square)](../../README.md)
 
 [简体中文](../../README.md) · [English](README.en.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+
+[Application preview](#application-preview) · [Quick start](#quick-start) · [Architecture](#architecture) · [Import your courses](#import-your-materials) · [AI development guide](../AI_GUIDE.md)
 
 </div>
 
@@ -23,9 +24,48 @@ LearnKit is a reusable desktop learning framework for developers, content creato
 
 Import your own materials, confirm the file mapping, configure the brand and adapt the interface. The runtime works offline without accounts, activation codes or an AI API. The public repository includes code, documentation and self-created sample text, rather than a third-party course collection.
 
+### One framework for listening, reading and reflection
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="../assets/listen-read.jpg" alt="Listening and reading illustration: an open book, headphones and an audio waveform" width="100%" />
+      <h3>Listen and read</h3>
+      <p>Listen to audio while reading a document. Keep playback running across pages, and return to important passages with search, highlights and bookmarks.</p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="../assets/notes-review.jpg" alt="Notes and review illustration: study cards, dividers and a looping paper ribbon" width="100%" />
+      <h3>Capture and revisit</h3>
+      <p>Turn excerpts into notes, then revisit them with study plans and spaced review. Personal records stay on your computer, with backup and export tools.</p>
+    </td>
+  </tr>
+</table>
+
+*The banner and feature illustrations are AI-generated conceptual artwork; the screenshot below shows the actual application.*
+
+## Application preview
+
 ![LearnKit demo interface](../assets/overview.png)
 
 *Actual application screenshot using self-created demo data. Documentation is available in four languages; the application UI is currently primarily Chinese.*
+
+## Quick start
+
+```powershell
+git clone https://github.com/shianlab/learnkit.git
+cd learnkit
+npm --prefix app ci
+npm --prefix app run prepare:demo
+npm --prefix app run dev
+```
+
+The four self-created lessons cover paired audio/text, text-only and audio-only content in two groups. Generated audio is a low-volume test tone, not spoken course material. The demo generator refuses to replace a custom course library.
+
+### From materials to an app
+
+| 01 · Prepare | 02 · Check and generate | 03 · Customize and distribute |
+| --- | --- | --- |
+| Organize audio and Markdown/TXT documents | Check matching with dry-run, resolve conflicts, then generate the library | Configure branding and stable identities, verify, then package the complete program folder |
 
 ## Capabilities
 
@@ -78,18 +118,6 @@ The React renderer communicates through a controlled preload API. The main proce
 Course resources and search indexes are distributed with the program. Personal notes, progress and review records live in separate user-data directories identified by the application and library. Stable IDs help preserve links when content is updated. The runtime retains context isolation, sandboxing, CSP, sender validation and resource-path checks.
 
 See the [architecture guide](../ARCHITECTURE.md) for implementation boundaries; detailed technical guides are currently in Chinese.
-
-## Quick start
-
-```powershell
-git clone https://github.com/shianlab/learnkit.git
-cd learnkit
-npm --prefix app ci
-npm --prefix app run prepare:demo
-npm --prefix app run dev
-```
-
-The four self-created lessons cover paired audio/text, text-only and audio-only content in two groups. Generated audio is a low-volume test tone, not spoken course material. The demo generator refuses to replace a custom course library.
 
 ## Import your materials
 
