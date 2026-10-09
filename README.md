@@ -1,21 +1,20 @@
 <div align="center">
 
+<img src="docs/assets/readme-banner.jpg" alt="学匣 LearnKit：音频、阅读、笔记与复习" width="100%" />
+
 # 学匣 · LearnKit
 
 ### 从音频与文稿，到你自己的桌面学习应用
 
 **A reusable desktop learning framework for audio, reading, notes, and review.**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0--dev-orange.svg)](app/package.json)
-[![Platform](https://img.shields.io/badge/platform-Windows_x64-0078D4.svg)](#平台与项目状态)
-[![Electron](https://img.shields.io/badge/Electron-44.5.1-47848F.svg?logo=electron)](app/package.json)
-[![React](https://img.shields.io/badge/React-19.3.0-149ECA.svg?logo=react)](app/package.json)
-[![TypeScript](https://img.shields.io/badge/TypeScript-7.0.2-3178C6.svg?logo=typescript)](app/package.json)
+[![License: MIT](https://img.shields.io/badge/License-MIT-68735f?style=flat-square)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.0--dev-c85c2d?style=flat-square)](app/package.json)
+[![Platform](https://img.shields.io/badge/platform-Windows_x64-292f2d?style=flat-square)](#平台与项目状态)
 
 **简体中文** · [English](docs/i18n/README.en.md) · [日本語](docs/i18n/README.ja.md) · [한국어](docs/i18n/README.ko.md)
 
-[快速启动](#快速启动) · [架构设计](#架构设计) · [导入自己的课程](#导入自己的课程) · [AI 开发指南](docs/AI_GUIDE.md) · [参与贡献](CONTRIBUTING.md)
+[应用预览](#应用预览) · [快速启动](#快速启动) · [架构设计](#架构设计) · [导入自己的课程](#导入自己的课程) · [AI 开发指南](docs/AI_GUIDE.md)
 
 </div>
 
@@ -29,9 +28,49 @@ LearnKit 是面向开发者、内容创作者和 AI 编程工具的**本地学�
 
 框架附带四门自制演示课程，公开仓库只包含代码、文档与自制文本示例。运行时无需账号、激活码或云服务，也不依赖 AI API。
 
+### 一套框架，连接听读与整理
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/assets/listen-read.jpg" alt="听读主题插画：打开的书本、耳机与音频波形" width="100%" />
+      <h3>听见，也读懂</h3>
+      <p>边听音频，边读文稿。切换页面时继续播放，用搜索、划线与书签回到重要段落。</p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/assets/notes-review.jpg" alt="整理与复习主题插画：笔记卡片、分类标签与环绕纸带" width="100%" />
+      <h3>记下来，再回顾</h3>
+      <p>把摘录整理成笔记，用学习计划和间隔复习持续回顾；个人记录保存在本机，并可备份与导出。</p>
+    </td>
+  </tr>
+</table>
+
+*横幅与主题插画为 AI 生成的概念视觉；下方为真实应用界面。*
+
+## 应用预览
+
 ![学匣 LearnKit 自制示例界面](docs/assets/overview.png)
 
 *真实应用截图，使用自制演示数据。多语言支持目前覆盖项目文档；应用界面当前以中文为主。*
+
+## 快速启动
+
+```powershell
+git clone https://github.com/shianlab/learnkit.git
+cd learnkit
+npm --prefix app ci
+npm --prefix app run prepare:demo
+npm --prefix app run dev
+```
+
+自制示例包含两个分组、四门课程：音文配对、纯文稿和纯音频。示例音频由代码生成，是低音量测试音，并非课程讲解。演示生成器会拒绝覆盖已导入的自定义课程库。
+
+### 从资料到应用
+
+| 01 · 准备资料 | 02 · 核对与生成 | 03 · 定制与分发 |
+| --- | --- | --- |
+| 整理音频与 Markdown/TXT 文稿 | 用 dry-run 检查配对，处理冲突后生成课程库 | 配置品牌与稳定身份，验证后打包整个程序目录 |
+| [支持格式与目录](#导入自己的课程) | [配对与映射指南](docs/IMPORT.md) | [品牌配置](#品牌配置与-ai-开发) · [打包说明](#打包与分发) |
 
 ## 功能模块
 
@@ -90,18 +129,6 @@ flowchart LR
 - **本地运行闭环**：文稿、音频、搜索、笔记和备份均在本机完成；开发时安装依赖和获取 Electron 运行库需要网络或预备离线文件。
 
 详细职责、数据流和修改入口见 [架构说明](docs/ARCHITECTURE.md)。
-
-## 快速启动
-
-```powershell
-git clone https://github.com/shianlab/learnkit.git
-cd learnkit
-npm --prefix app ci
-npm --prefix app run prepare:demo
-npm --prefix app run dev
-```
-
-自制示例包含两个分组、四门课程：音文配对、纯文稿和纯音频。示例音频由代码生成，是低音量测试音，并非课程讲解。演示生成器会拒绝覆盖已导入的自定义课程库。
 
 ## 导入自己的课程
 

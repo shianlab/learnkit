@@ -1,17 +1,18 @@
 <div align="center">
 
+<img src="../assets/readme-banner.jpg" alt="LearnKit · 学匣 — Audio, Reading, Notes, Review" width="100%" />
+
 # LearnKit · 学匣
 
 ### 音声と文書から、自分のデスクトップ学習アプリを構築
 
-[![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../../LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0--dev-orange.svg)](../../app/package.json)
-[![Windows](https://img.shields.io/badge/platform-Windows_x64-0078D4.svg)](../../README.md)
-[![Electron](https://img.shields.io/badge/Electron-44.5.1-47848F.svg?logo=electron)](../../app/package.json)
-[![React](https://img.shields.io/badge/React-19.3.0-149ECA.svg?logo=react)](../../app/package.json)
-[![TypeScript](https://img.shields.io/badge/TypeScript-7.0.2-3178C6.svg?logo=typescript)](../../app/package.json)
+[![MIT](https://img.shields.io/badge/License-MIT-68735f?style=flat-square)](../../LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.0--dev-c85c2d?style=flat-square)](../../app/package.json)
+[![Windows](https://img.shields.io/badge/platform-Windows_x64-292f2d?style=flat-square)](../../README.md)
 
 [简体中文](../../README.md) · [English](README.en.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
+
+[アプリの画面](#アプリの画面) · [クイックスタート](#クイックスタート) · [アーキテクチャ](#アーキテクチャ) · [教材のインポート](#自分の教材をインポート) · [AI 開発ガイド](../AI_GUIDE.md)
 
 </div>
 
@@ -23,9 +24,48 @@ LearnKit は、開発者、コンテンツ制作者、AI コーディングツ�
 
 自分の教材を用意し、音声と文書の対応を確認してから、アプリ名や画面を調整できます。実行時にアカウント、アクティベーションコード、AI API は不要です。公開リポジトリにはコード、ドキュメント、自作のサンプル文章を収録しており、第三者の講座教材は含みません。
 
+### 聴く・読む・整理するを、一つの基盤で
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="../assets/listen-read.jpg" alt="聴く・読むを表すイラスト：開いた本、ヘッドホン、音声波形" width="100%" />
+      <h3>聴きながら、読み進める</h3>
+      <p>音声を聴きながら文書を読む。画面を移動しても再生は続き、検索・ハイライト・ブックマークで大切な段落に戻れます。</p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="../assets/notes-review.jpg" alt="ノートと復習を表すイラスト：学習カード、仕切り、輪を描く紙のリボン" width="100%" />
+      <h3>記録して、振り返る</h3>
+      <p>抜粋をノートにまとめ、学習計画と間隔反復で振り返る。個人の記録はローカルに保存され、バックアップとエクスポートができます。</p>
+    </td>
+  </tr>
+</table>
+
+*バナーとイラストは AI 生成のコンセプト画像です。下のスクリーンショットは実際のアプリ画面です。*
+
+## アプリの画面
+
 ![LearnKit のサンプル画面](../assets/overview.png)
 
 *自作データを使用した実際の画面です。プロジェクト文書は 4 言語で提供していますが、アプリの UI は現在主に中国語です。*
+
+## クイックスタート
+
+```powershell
+git clone https://github.com/shianlab/learnkit.git
+cd learnkit
+npm --prefix app ci
+npm --prefix app run prepare:demo
+npm --prefix app run dev
+```
+
+自作の 4 講座で、音声と文書の組、文書のみ、音声のみを確認できます。サンプル音声は低音量のテスト音であり、講義ではありません。デモ生成処理は、インポート済みの独自教材庫を上書きしません。
+
+### 教材からアプリへ
+
+| 01 · 教材を準備 | 02 · 確認して生成 | 03 · カスタマイズと配布 |
+| --- | --- | --- |
+| 音声と Markdown/TXT 文書を整理 | dry-run で対応を確認し、競合を解消して教材を生成 | ブランドと安定した識別子を設定し、検証後にプログラム全体をパッケージ化 |
 
 ## 主な機能
 
@@ -78,18 +118,6 @@ React レンダラーは preload API を介してメインプロセスと通信�
 教材と検索インデックスはアプリと一緒に配布し、個人のノートや進捗はアプリおよび教材庫の識別子に基づくユーザーデータ領域に保存します。contextIsolation、sandbox、CSP、IPC 送信元の検証、パス境界の確認を維持します。
 
 実装の詳細は [構成ガイド](../ARCHITECTURE.md) を参照してください。詳細な技術ガイドは現在中国語です。
-
-## クイックスタート
-
-```powershell
-git clone https://github.com/shianlab/learnkit.git
-cd learnkit
-npm --prefix app ci
-npm --prefix app run prepare:demo
-npm --prefix app run dev
-```
-
-自作の 4 講座で、音声と文書の組、文書のみ、音声のみを確認できます。サンプル音声は低音量のテスト音であり、講義ではありません。デモ生成処理は、インポート済みの独自教材庫を上書きしません。
 
 ## 自分の教材をインポート
 
